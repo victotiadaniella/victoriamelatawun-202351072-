@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Halaman Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Halaman Register</h1>
+    </header>
+
+    <nav>
+        <ul style="list-style-type: none; margin: 0; padding: 0;">
+            <li style="display: inline; margin-right: 10px;"><a href="index.html">Beranda</a></li>
+            <li style="display: inline; margin-right: 10px;"><a href="profil.html">Biodata</a></li>
+            <li style="display: inline; margin-right: 10px;"><a href="Kontak.html">Kontak</a></li>
+            <li style="display: inline; margin-right: 10px;"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <img src="apasih.jpg" alt="Gambar Hero" class="hero" style="width: 100%;" height="200px" />
+
+    <div style="display: flex; padding: 20px;">
+        <div style="flex: 3; padding: 20px;">
+           
+
+            <form id="Registrasiform">
+                <fieldset>
+                <legend>Registrasi</legend>
+                <p>
+                    <label>Nama:</label>
+                    <input type="text" name="nama" placeholder="Nama Lengkap..." id="nama" />
+                </p>
+                <p>
+                    <label>Username:</label>
+                    <input type="text" name="username" placeholder="username..." id="username"/>
+                </p>
+                <p>
+                    <label>Email:</label>
+                    <input type="email" name="email" placeholder="your email..." id="email"/>
+                </p>
+                <p>
+                    <label>Tanggal Lahir:</label>
+                    <input type="date" name="tanggal" id="tanggal"/>
+                </p>
+                <p>
+                    <label>Password:</label>
+                    <input type="password" name="password" placeholder="password..." id="password"/>
+                </p>
+                <p>
+                    <label>Jenis Kelamin</label>
+                    <label><input type="radio" name="jenis_kelamin" value="Laki-laki" id="Laki-Laki">Laki-Laki</label>
+                    <label><input type="radio" name="jenis_kelamin" value="Perempuan" id="Perempuan">Perempuan</label>
+                </p>
+                <p>
+                    <label>Agama:</label>
+                    <select name="agama" id="agama">
+                        <option value="islam">Islam</option>
+                        <option value="kristen">Kristen</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="budha">Budha</option>
+                    </select>
+                </p>
+                <p>
+                    <label>Biografi</label>
+                    <textarea name="biografi" id="biografi"></textarea>
+                </p>
+                <p>
+                    <button type="button" onclick="konfirmasiRegistrasi();">Daftar</button>
+                </p>
+            </fieldset>
+            </form>
+
+        </div>
+
+        <aside style="flex: 1; background-color: #ffffff; padding: 20px;">
+            <h3>Alternatif Link</h3>
+            <p>Ini adalah sidebar dengan alternatif link</p>
+            <ul>
+                <li><a href="https://unpatti.ac.id/">website universitas</a></li>
+                <li><a href="https://fst.unpatti.ac.id">website universitas</a></li>
+                <li><a href="https://ilkom.fst.unpatti.ac.id/">website universitas</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 victoria daniela melatawun. All Rights Reserved.</p>
+    </footer>
+</body>
+
+<script>
+    function konfirmasiRegistrasi() {
+        var nama = document.getElementById("nama").value;
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var tanggal = document.getElementById("tanggal").value;
+        var password = document.getElementById("password").value;
+        var jeniskelamin = document.querySelector('input[name="jenis_kelamin"]:checked');
+        var agama = document.getElementById("agama").value;
+        var biografi = document.getElementById("biografi").value;
+    
+        var jeniskelaminValue = jeniskelamin ? jeniskelamin.value : "Tidak dipilih";
+
+        var konfirmasi = "Konfirmasi Registrasi:\n\n" +
+        "nama: " + nama + "\n" +
+        "username: " + username + "\n" +
+        "email: " + email + "\n" +
+        "tanggal Lahir: " + tanggal + "\n" +
+        "password: " + password + "\n" +
+        "jenis Kelamin: " + jeniskelaminValue + "\n" +
+        "agama: " + agama + "\n" +
+        "biografi: " + biografi + "\n" ;
+
+        alert(konfirmasi);
+    }
+</script>
+</html>
